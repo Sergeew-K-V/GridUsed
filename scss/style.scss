@@ -1,0 +1,35 @@
+@import '/scss/nullstyles.scss';
+
+.form-input {
+  border: 1px solid red;
+  margin: 20px auto;
+  padding: 5px;
+  &__btn {
+  }
+  &__grid {
+  }
+  &__input {
+  }
+}
+.grid-big {
+  margin: 20px auto;
+  padding: 5px;
+  display: grid;
+  border: 1px solid black;
+  &__small {
+    margin: 10px;
+    border: 1px solid green;
+    min-height: 25px;
+  }
+}
+body {
+  font-size: 16px;
+}
+.main {
+}
+.title {
+  font-size: 20px;
+  text-align: center;
+}
+.wrapper {
+}
