@@ -1,8 +1,24 @@
-@import '/scss/nullstyles.scss';
+@import 'nullstyles.scss';
+
+body {
+  font-size: 16px;
+}
+.main {
+}
+.title {
+  font-size: 20px;
+  text-align: center;
+  margin: 20px auto;
+}
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template: minmax(50px, 100px) minmax(100px, auto) / 1fr;
+}
 
 .form-input {
   border: 1px solid red;
-  margin: 20px auto;
+  margin: 20px 40px;
   padding: 5px;
   &__btn {
   }
@@ -12,7 +28,7 @@
   }
 }
 .grid-big {
-  margin: 20px auto;
+  margin: 20px 40px;
   padding: 5px;
   display: grid;
   border: 1px solid black;
@@ -21,15 +37,4 @@
     border: 1px solid green;
     min-height: 25px;
   }
-}
-body {
-  font-size: 16px;
-}
-.main {
-}
-.title {
-  font-size: 20px;
-  text-align: center;
-}
-.wrapper {
 }
