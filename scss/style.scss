@@ -13,28 +13,52 @@ body {
 .wrapper {
   min-height: 100%;
   display: grid;
-  grid-template: minmax(50px, 100px) minmax(100px, auto) / 1fr;
+  grid-template: minmax(20px, 50px) minmax(100px, auto) / 1fr;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(32, 96, 106, 1) 45%,
+    rgba(0, 209, 255, 1) 100%
+  );
 }
 
 .form-input {
-  border: 1px solid red;
+  border: 2px solid black;
+  border-radius: 10px;
   margin: 20px 40px;
   padding: 5px;
   &__btn {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    text-transform: uppercase;
   }
   &__grid {
+    display: grid;
+    grid-template: 1fr / repeat(5, 1fr);
   }
   &__input {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 10px;
   }
 }
 .grid-big {
   margin: 20px 40px;
   padding: 5px;
   display: grid;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: grid;
+  grid-template: minmax(50px, 1fr) / repeat(3, 1fr);
   &__small {
+    border-radius: 5px;
     margin: 10px;
-    border: 1px solid green;
+    border: 1px solid rgb(0, 247, 255);
     min-height: 25px;
   }
 }

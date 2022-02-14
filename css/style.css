@@ -100,15 +100,43 @@ body {
   min-height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: minmax(50px, 100px) minmax(100px, auto);
+  -ms-grid-rows: minmax(20px, 50px) minmax(100px, auto);
   -ms-grid-columns: 1fr;
-      grid-template: minmax(50px, 100px) minmax(100px, auto)/1fr;
+      grid-template: minmax(20px, 50px) minmax(100px, auto)/1fr;
+  background: #020024;
+  background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(45%, #20606a), to(#00d1ff));
+  background: linear-gradient(90deg, #020024 0%, #20606a 45%, #00d1ff 100%);
 }
 
 .form-input {
-  border: 1px solid red;
+  border: 2px solid black;
+  border-radius: 10px;
   margin: 20px 40px;
   padding: 5px;
+}
+
+.form-input__btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.form-input__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+  -ms-grid-columns: (1fr)[5];
+      grid-template: 1fr/repeat(5, 1fr);
+}
+
+.form-input__input {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 10px;
 }
 
 .grid-big {
@@ -116,11 +144,17 @@ body {
   padding: 5px;
   display: -ms-grid;
   display: grid;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: grid;
+  -ms-grid-rows: minmax(50px, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template: minmax(50px, 1fr)/repeat(3, 1fr);
 }
 
 .grid-big__small {
+  border-radius: 5px;
   margin: 10px;
-  border: 1px solid green;
+  border: 1px solid #00f7ff;
   min-height: 25px;
 }
