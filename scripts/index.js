@@ -1,7 +1,13 @@
-import Person from './classes'
+class Person {
+  constructor(options) {
+    this.name = options.name
+    this.age = options.age
+    this.message = options.message
+  }
+}
 
 const form = document.querySelector('.form-input')
-const inputs = form.querySelectorAll('.form-input')
+const inputs = form.querySelectorAll('.form-input__input')
 const btnSave = document.getElementById('btn-save')
 const btnDownload = document.getElementById('btn-download')
 
@@ -15,16 +21,26 @@ const dataBase = [firstTester]
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 })
-
 btnSave.addEventListener('click', (e) => {
-  console.log('send')
+  const tempTester = new Person({})
 
-  const tester = new Person()
-
-  for (let i = 0; i < inputs.length; i++) {
-    console.log(tester.name)
+  for (let k = 0; k < inputs.length; k++) {
+    if (k === 0) {
+      tempTester.name = inputs[k].value
+      inputs[k].value = ''
+    }
+    if (k === 1) {
+      tempTester.age = inputs[k].value
+      inputs[k].value = ''
+    }
+    if (k === 2) {
+      tempTester.message = inputs[k].value
+      inputs[k].value = ''
+    }
   }
-  dataBase.push(tester)
+
+  dataBase.push(tempTester)
+  console.log('send')
   console.log(dataBase)
 })
-console.log(dataBase)
+// console.log(dataBase)
