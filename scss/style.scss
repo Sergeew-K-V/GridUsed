@@ -46,7 +46,7 @@ body {
   }
   &__grid {
     display: grid;
-    grid-template: 1fr / repeat(5, 1fr);
+    grid-template: 1fr / repeat(3, 1fr) minmax(50px, auto) minmax(50px, auto);
   }
   &__input {
     border: 1px solid black;

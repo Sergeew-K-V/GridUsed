@@ -131,8 +131,8 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr;
-  -ms-grid-columns: (1fr)[5];
-      grid-template: 1fr/repeat(5, 1fr);
+  -ms-grid-columns: (1fr)[3] minmax(50px, auto) minmax(50px, auto);
+      grid-template: 1fr/repeat(3, 1fr) minmax(50px, auto) minmax(50px, auto);
 }
 
 .form-input__input {
