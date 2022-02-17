@@ -16,13 +16,18 @@ const firstTester = new Person({
   age: 19,
   message: 'Darov!',
 })
-const dataBase = [firstTester]
+const secondTester = new Person({
+  name: 'Nikita',
+  age: 17,
+  message: 'Grettings!',
+})
+const dataBase = [firstTester, secondTester]
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 })
 
-btnSave.addEventListener('click', (e) => {
+btnSave.addEventListener('click', () => {
   const tempTester = new Person({})
   let inputHaveSomething = false
 
@@ -55,4 +60,22 @@ btnSave.addEventListener('click', (e) => {
 
   console.log(dataBase)
 })
-// console.log(dataBase)
+
+const gridSmallTable = document.querySelector('.grid-big')
+btnDownload.addEventListener('click', () => {
+  const newBLock = document.createElement('div')
+  newBLock.classList.add('.grid-small-item')
+  newBLock.insertAdjacentHTML('afterbegin', `<span>Hello</span>`)
+  // for (let i = 0; i < gridSmallTable.length; i++) {
+  //   // console.log(gridSmallTable[i])
+  //   const newELement = document.createElement('div')
+  //   newELement.insertAdjacentHTML(
+  //     'afterbegin',
+  //     `<span class="gridSmallItem" >Hello</span>`
+  //   )
+  //   // newELement.classList.add('.gridSmallItem')
+  // }
+  // console.log(dataBase)
+})
+
+console.log(gridSmallTable)

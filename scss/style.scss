@@ -71,3 +71,9 @@ body {
     min-height: 25px;
   }
 }
+.grid-small-item {
+  min-height: 20px;
+  background-color: black;
+  display: grid;
+  grid-template: 1fr / 1fr;
+}

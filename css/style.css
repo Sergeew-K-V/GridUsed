@@ -162,3 +162,13 @@ body {
   border: 1px solid #00f7ff;
   min-height: 25px;
 }
+
+.grid-small-item {
+  min-height: 20px;
+  background-color: black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template: 1fr / 1fr;
+}
