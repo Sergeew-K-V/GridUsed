@@ -63,7 +63,9 @@ body {
   border-radius: 10px;
   display: grid;
   grid-template: minmax(150px, 1fr) / repeat(3, 1fr);
+
   &__small {
+    color: white;
     border-radius: 10px;
     padding: 5px;
     margin: 10px;
@@ -72,8 +74,8 @@ body {
   }
 }
 .grid-small-item {
-  min-height: 20px;
-  background-color: black;
+  color: white;
+  // background-color: black;
   display: grid;
   grid-template: 1fr / 1fr;
 }
