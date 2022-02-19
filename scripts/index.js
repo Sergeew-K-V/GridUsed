@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const dataBase = [firstTester, secondTester]
 
   localStorage.setItem('database', JSON.stringify(dataBase))
+  const temp = localStorage.getItem('database')
+  console.log(JSON.parse(temp))
 
   form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
           inputs[k].value = ''
         }
         if (k === 1) {
-          tempTester.age = inputs[k].value * 1
+          tempTester.age = inputs[k].value - 0
           inputs[k].value = ''
         }
         if (k === 2) {
