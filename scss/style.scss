@@ -72,10 +72,26 @@ body {
     border: 1px solid rgb(0, 247, 255);
     min-height: 25px;
   }
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
 }
 .grid-small-item {
-  color: white;
-  // background-color: black;
-  display: grid;
-  grid-template: 1fr / 1fr;
+  border-bottom: 1px solid wheat;
+  margin: 2.5px 0;
+  position: relative;
+}
+
+.grid-small-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 6px 0 0 -8px;
 }
