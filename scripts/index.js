@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnSave = document.getElementById('btn-save')
   const btnDownload = document.getElementById('btn-download')
   const list = document.querySelectorAll('.grid-big__list')
+
+  const databaseLS = localStorage.getItem('database')
+  const dataBaseParsed = JSON.parse(databaseLS)
+
   let firstCreated = true
 
   class Person {
@@ -26,9 +30,32 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   const dataBase = [firstTester, secondTester]
 
-  localStorage.setItem('database', JSON.stringify(dataBase))
-  const temp = localStorage.getItem('database')
-  console.log(JSON.parse(temp))
+  if (dataBaseParsed !== null) {
+    for (let k = 0; k < dataBaseParsed.length; k++) {
+      for (let i = 0; i < inputs.length; i++) {
+        if (i === 0) {
+          list[i].insertAdjacentHTML(
+            'beforeend',
+            `<li class="grid-small-item">${dataBaseParsed[k].name}</span>`
+          )
+        }
+        if (i === 1) {
+          list[i].insertAdjacentHTML(
+            'beforeend',
+            `<li class="grid-small-item">${dataBaseParsed[k].age}</span>`
+          )
+        }
+        if (i === 2) {
+          list[i].insertAdjacentHTML(
+            'beforeend',
+            `<li class="grid-small-item">${dataBaseParsed[k].message}</span>`
+          )
+        }
+      }
+    }
+    firstCreated = false
+  }
+  console.log(dataBaseParsed)
 
   form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -64,30 +91,30 @@ document.addEventListener('DOMContentLoaded', () => {
       dataBase.push(tempTester)
       console.log('send')
     }
-
+    localStorage.setItem('database', JSON.stringify(dataBase))
     console.log(dataBase)
   })
 
   btnDownload.addEventListener('click', () => {
     if (firstCreated) {
-      for (let k = 0; k < dataBase.length; k++) {
+      for (let k = 0; k < dataBaseParsed.length; k++) {
         for (let i = 0; i < inputs.length; i++) {
           if (i === 0) {
             list[i].insertAdjacentHTML(
               'beforeend',
-              `<li class="grid-small-item">${dataBase[k].name}</span>`
+              `<li class="grid-small-item">${dataBaseParsed[k].name}</span>`
             )
           }
           if (i === 1) {
             list[i].insertAdjacentHTML(
               'beforeend',
-              `<li class="grid-small-item">${dataBase[k].age}</span>`
+              `<li class="grid-small-item">${dataBaseParsed[k].age}</span>`
             )
           }
           if (i === 2) {
             list[i].insertAdjacentHTML(
               'beforeend',
-              `<li class="grid-small-item">${dataBase[k].message}</span>`
+              `<li class="grid-small-item">${dataBaseParsed[k].message}</span>`
             )
           }
         }
@@ -97,24 +124,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const listGridSmall = document.querySelectorAll('.grid-small-item')
       listGridSmall.forEach((item) => item.remove())
 
-      for (let k = 0; k < dataBase.length; k++) {
+      for (let k = 0; k < dataBaseParsed.length; k++) {
         for (let i = 0; i < inputs.length; i++) {
           if (i === 0) {
             list[i].insertAdjacentHTML(
               'beforeend',
-              `<li class="grid-small-item">${dataBase[k].name}</span>`
+              `<li class="grid-small-item">${dataBaseParsed[k].name}</span>`
             )
           }
           if (i === 1) {
             list[i].insertAdjacentHTML(
               'beforeend',
-              `<li class="grid-small-item">${dataBase[k].age}</span>`
+              `<li class="grid-small-item">${dataBaseParsed[k].age}</span>`
             )
           }
           if (i === 2) {
             list[i].insertAdjacentHTML(
               'beforeend',
-              `<li class="grid-small-item">${dataBase[k].message}</span>`
+              `<li class="grid-small-item">${dataBaseParsed[k].message}</span>`
             )
           }
         }
